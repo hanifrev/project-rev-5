@@ -34,9 +34,9 @@
 	display: grid;
 	background: #7FFFD4;
 	width: 100%;
-	height: 27vw;
+	height: auto;
 	grid-template-columns: 15% 75% 15%;
-	grid-template-rows: 30% 20vw;
+	grid-template-rows: 30% auto;
 	grid-template-areas: "header1 header2 header3"
 						 "content1 content2 content3"
 }
@@ -58,6 +58,8 @@
 	text-align: justify;
 }
 
+
+
 @media (max-width: 980px) {
 
 	#navbar {
@@ -66,10 +68,10 @@
 		text-align:  center;
 	}
 
+
 	.welcome-section {
-		height: 34vw;        /*still need improvement on media query */
-	/*	font-size: 60px;*/
-	}
+		grid-template-rows: 28% auto;	
+	} 
 }
 
 @media (max-width: 850px) {
@@ -79,13 +81,13 @@
 		text-align:  center;
 	}
 
-
+	
 	.welcome-section {
-		height: 46vw;
-		grid-template-columns: 1% 98% 1%;
-	}
+		grid-template-rows: 25% auto;	
+	} 
 	.welcome-section h1 {
 		font-size: 21px;
+
 	}
 }
 
@@ -97,20 +99,22 @@
 	}
 
 	.welcome-section {
-		height: 50vw;
+		height: auto;
+		grid-template-rows: 20% auto;
 	}
 
 	.welcome-section > h1 {
-		font-size: 20px;
+		font-size: 
 	}
 	.welcome-section p {
-		font-size: 15px;
+		font-size: 
 	}
-}
+} 
+
 
 .projects {
 	background: 	#5F9EA0;
-	height: 60vw;
+	height: auto;
 	display: grid;
 }
 
@@ -124,8 +128,32 @@
 	text-align: center;
 	font-size: 1.5rem;
   	padding: 2rem 0.5rem;
+}
 
+@media (max-width: 1200px) {
+	.projects-title {
+		text-align: center;
+		font-size: 20px;
+  		padding: 20px 0.5rem;
+  	}
+}
 
+@media (max-width: 700px) {
+	.projects {
+		display: grid;
+		grid-template-columns: auto;
+		grid-template-rows: auto;
+	}
+	.projects-list {
+		display: grid;
+		grid-template-columns: auto;
+		grid-template-rows: auto;
+	}
+	.projects-title {
+		text-align: center;
+		font-size: 1rem;
+  		padding: 20px 0.5rem;
+  	}
 }
 
 .img-pr {
@@ -150,9 +178,10 @@
 }
 
 .contacts {
-	background: red;
+	background: yellow;
 	display: grid;
 	text-align: center;
+	grid-template-columns: 1fr; 
 }
 
 .contact-link {
@@ -163,4 +192,29 @@
 #profile-link {
 	margin: 30px;
 	padding: 40px;
+}
+
+@media (max-width: 950px) {
+	.contact-link {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+	#profile-link {
+		margin: 10px;
+		padding: 10px;
+	}
+
+@media (max-width: 600px) {
+	.contact-link {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+	}
+
+
+	#profile-link {
+		margin: 10px;
+		padding: 10px;
+	}
 }
